@@ -43,9 +43,7 @@ dino_data %>%
 
 First let's plot the data in the circle dataset:
 
-```{r plot-star}
-circle <- datasaurus_dozen |>
-    filter(dataset == "circle")
+```{r plot-circle}
 circle_data <- datasaurus_dozen |>
     filter(dataset == "circle")
 ggplot(data=circle_data, mapping = aes(x=x, y=y)) + geom_point()
@@ -53,22 +51,44 @@ ggplot(data=circle_data, mapping = aes(x=x, y=y)) + geom_point()
 
 And next calculate the correlation between `x` and `y` in this dataset:
 
-```{r cor-star}
-circle_data |> summarize(r = cor(x,y))
+```{r cor-circle}
+circle_data |> 
+  summarize(r = cor(x,y))
 ```
 
 ### Exercise 4
 
-(Add code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.)
+First let's plot the data in the star dataset:
 
-```{r}
-
+```{r plot_star}
+star_data <- datasaurus_dozen |>
+    filter(dataset == "star")
+ggplot(data=star_data, mapping = aes(x=x, y=y)) + geom_point()
 ```
 
-```{r}
+And next calculate the correlation between `x` and `y` in this dataset:
 
+```{r cor-star}
+star_data |> 
+  summarize(r = cor(x,y))
 ```
 
 ### Exercise 5
 
-(Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+First let's plot all 13 datasets in the datasaurus_dozen:
+
+```{r plot_datasaurus_dozen}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) + 
+  geom_point() + 
+  facet_wrap(~ dataset, ncol = 3) + 
+  theme(legend.position = "none")
+```
+
+Now calculate all the correlation coefficients:
+``` {r cor_datasaurus_dozen}
+datasaurus_dozen |>
+  group_by(dataset) |>
+  summarize(r = cor(x, y)) 
+```
+
+All of the datasets in the datasaurus_dozen have a very slightly negative correlation between x and y (roughly r = -0.06 for all 13 datasets), indicating little relationship between the variables.
