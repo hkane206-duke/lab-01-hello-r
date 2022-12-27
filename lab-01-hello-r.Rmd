@@ -2,7 +2,9 @@
 title: "Lab 01 - Hello R"
 author: "Harrison Kane"
 date: "12/26/2022"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ### Load packages
@@ -15,12 +17,9 @@ library(datasauRus)
 
 ### Exercise 1
 
-(Type your answer to Exercise 1 here. This exercise does not require any R code.)
 1846 rows, 3 columns
 
 ### Exercise 2
-
-(The answers for this Exercise are given for you below. But you should clean up some of the narrative so that it only includes what you want to turn in.)
 
 First let's plot the data in the dino dataset:
 
