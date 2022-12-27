@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Hello R"
-author: "Harrison Kane" 
+author: "Harrison Kane"
 date: "12/26/2022"
 output: html_document
 ---
@@ -16,6 +16,7 @@ library(datasauRus)
 ### Exercise 1
 
 (Type your answer to Exercise 1 here. This exercise does not require any R code.)
+1846 rows, 3 columns
 
 ### Exercise 2
 
