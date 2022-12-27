@@ -23,7 +23,7 @@ library(datasauRus)
 
 First let's plot the data in the dino dataset:
 
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=5, fig.width=5}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
@@ -42,7 +42,7 @@ dino_data %>%
 
 First let's plot the data in the circle dataset:
 
-```{r plot-circle}
+```{r plot-circle, fig.height=5, fig.width=5}
 circle_data <- datasaurus_dozen |>
     filter(dataset == "circle")
 ggplot(data=circle_data, mapping = aes(x=x, y=y)) + geom_point()
@@ -59,7 +59,7 @@ circle_data |>
 
 First let's plot the data in the star dataset:
 
-```{r plot_star}
+```{r plot_star, fig.height=5, fig.width=5}
 star_data <- datasaurus_dozen |>
     filter(dataset == "star")
 ggplot(data=star_data, mapping = aes(x=x, y=y)) + geom_point()
@@ -76,7 +76,7 @@ star_data |>
 
 First let's plot all 13 datasets in the datasaurus_dozen:
 
-```{r plot_datasaurus_dozen}
+```{r plot_datasaurus_dozen, fig.height=10, fig.width=6}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) + 
   geom_point() + 
   facet_wrap(~ dataset, ncol = 3) + 
